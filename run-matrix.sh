@@ -34,10 +34,13 @@ fi
 # GraalVM x 17 graalvm-22.3.1+java17
 
 run () {
-  echo "##### $1 #####" | tee -a result.txt
-  asdf local java $1 | tee -a result.txt
-  ./run.sh | tee -a result.txt
+  asdf local java $1 2>&1 > /dev/null
+  ./run.sh "$1" | tee -a result.txt
 }
+
+# OpenJDK17でJARを作る
+asdf local java openjdk-17
+sbt assembly
 
 run openjdk-11
 run openjdk-17

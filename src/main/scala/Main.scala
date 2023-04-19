@@ -22,12 +22,12 @@ class PrimeNumber {
   }
 
   def calc(upperLimit: Int): Unit = {
-    println("upper limit: " + upperLimit)
+    //  println(upperLimit)
     for (n <- 2 to upperLimit) {
       if (isPrimeNumber(n))
         primeNumbers += n
     }
-    println(s"Count: ${primeNumbers.length}")
+    // println(s"Count: ${primeNumbers.length}")
   }
 }
 
