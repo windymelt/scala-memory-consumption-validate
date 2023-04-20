@@ -3,8 +3,6 @@
 uname -a
 free -h
 
-export JAVA_OPTS="-Xms100M -Xmx2G"
-
 if [ -f result.txt ]; then
   rm result.txt
 fi
