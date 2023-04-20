@@ -5,7 +5,7 @@ JVMCATEGORY=$2
 JVAR=$3
 
 run () {
-  JAVA_OPTS="-Xms100M -Xmx2G" \time -f "$JVM\t$JVMCATEGORY\t$JVAR\t$3\t%e\t%M\t" $2 -u $3 2>&1
+  JAVA_OPTS="-Xms100M -Xmx2G" \time -f "$JVM\t$JVMCATEGORY\t$JVAR\t$3\t%e\t%M" $2 -u $3 2>&1
 }
 
 start () {
