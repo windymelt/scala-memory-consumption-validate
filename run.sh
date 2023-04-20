@@ -3,7 +3,7 @@
 JVM=$1
 
 run () {
-  \time -f "$JVM\t$3\t%e\t%M\t" $2 -u $3 2>&1
+  JAVA_OPTS="-Xms100M -Xmx2G" \time -f "$JVM\t$3\t%e\t%M\t" $2 -u $3 2>&1
 }
 
 start () {
