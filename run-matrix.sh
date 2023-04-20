@@ -33,23 +33,23 @@ fi
 
 run () {
   asdf local java $1 2>&1 > /dev/null
-  ./run.sh "$1" | tee -a result.txt
+  ./run.sh "$1" "$2" | tee -a result.txt
 }
 
 # OpenJDK17でJARを作る
 asdf local java openjdk-17
 sbt assembly
 
-run openjdk-11
-run openjdk-17
+run openjdk-11 openjdk
+run openjdk-17 openjdk
 
-run temurin-8.0.362+9
-run temurin-11.0.18+10
-run temurin-17.0.6+10
+run temurin-8.0.362+9 temurin
+run temurin-11.0.18+10 temurin
+run temurin-17.0.6+10 temurin
 
-run corretto-8.372.07.1
-run corretto-11.0.19.7.1
-run corretto-17.0.7.7.1
+run corretto-8.372.07.1 corretto
+run corretto-11.0.19.7.1 corretto
+run corretto-17.0.7.7.1 corretto
 
-run graalvm-22.3.1+java11
-run graalvm-22.3.1+java17
+run graalvm-22.3.1+java11 graalvm
+run graalvm-22.3.1+java17 graalvm
