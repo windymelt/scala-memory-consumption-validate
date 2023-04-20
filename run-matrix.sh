@@ -40,6 +40,8 @@ run () {
 asdf local java openjdk-17
 sbt assembly
 
+echo "JVM	BRAND	VER COUNT	TIMESEC	MEMKIB"
+
 run openjdk-11 openjdk 11
 run openjdk-17 openjdk 17
 
